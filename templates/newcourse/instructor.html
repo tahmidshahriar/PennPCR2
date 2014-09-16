@@ -1,0 +1,45 @@
+{% extends 'newcourse/base.html' %}
+    
+{% block title %} Reviews for the Professor{% endblock %}
+
+{% block head %} {{thename}} {% endblock %}
+{% block detail %} Reviews 
+<br><br>
+<a href="/localquaker/instructors/{{theid}}/comment"> Add a comment through this link </a>
+<font size = "4">
+{% endblock %}
+{% block body_block %}
+	<a href="{{go}}">
+	PennCourseReview Profile
+	</a>
+
+    {% if results %}
+    	<section>
+    	Courses the professor taught
+    	{% for a in results %}
+		<li>
+		{{a}}
+	</li>
+	{% endfor %}
+    </p>
+    </section>
+   
+        
+    {% for a in comments %}
+    <section>
+    	<font color="red"> Time Posted: {{a.timeposted}} </font><br>
+    	<strong>School: </strong>{{a.yourschool}}<br>
+    	<strong>Class Taken with this Professor: </strong>{{a.whichclass}}<br>
+    	<strong>Comment:</strong> {{a.description}} <br>
+    </section>
+
+    
+    {% endfor %}
+
+
+
+            {% endif %}
+ </font>
+    	
+
+{% endblock %}

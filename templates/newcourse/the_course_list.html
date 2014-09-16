@@ -1,0 +1,41 @@
+{% extends 'newcourse/base.html' %}
+    
+{% block title %} {{thetype}} {% endblock %}
+
+{% block head %} {{thetype}} {% endblock %}
+{% block detail %} {% endblock %}
+{% block body_block %}
+
+    {% if results %}
+    <section>
+    {% for a in results %}
+	<li>
+	<a href="/localquaker/coursehistories/{{a.id}}/">
+
+	{% if a.name %}
+		{{ a.name }}
+	{% else %}
+	<b> Name Unavailabe </b>
+	{% endif %}
+
+
+	{% for b in a.aliases %}
+	({{b}})
+	{% endfor %}
+
+
+
+
+
+
+
+	</a>
+	</li>
+	{% endfor %}
+    </p>
+    </section>
+   
+            {% endif %}
+	
+        
+{% endblock %}

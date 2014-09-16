@@ -1,0 +1,32 @@
+{% extends 'newcourse/base.html' %}
+
+{% block title %} Reviews for the class{% endblock %}
+
+{% block head %} {{thename}} {% endblock %}
+{% block detail %} Reviews
+<br><br>
+<a href="/localquaker/depts/{{theid}}/comment"> Add a comment through this link </a>
+<font size = "4">
+{% endblock %}
+{% block body_block %}
+
+    	<section>
+    {% for a in comments %}
+    <section>
+
+    	<font color="red"> Time Posted: {{a.timeposted}} </font><br>
+    	<strong>School: </strong>{{a.yourschool}}<br>
+    	<strong>Professor you took this class with: </strong>{{a.yourprof}}<br>
+        <strong> Book worth buying?</strong> {{a.bookuseful}} <br>
+
+    	<strong>Comment:</strong> {{a.description}} <br>
+    </section>
+
+    {% endfor %}
+
+
+
+ </font>
+
+
+{% endblock %}

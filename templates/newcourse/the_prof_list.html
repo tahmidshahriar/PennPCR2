@@ -1,0 +1,57 @@
+{% extends 'newcourse/base.html' %}
+    
+{% block title %} {{thetype}} {% endblock %}
+
+{% block head %} {{thetype}} {% endblock %}
+{% block detail %} 
+
+
+
+<a href="/localquaker/category/instructors/0"> A </a> 
+<a href="/localquaker/category/instructors/1"> B </a> 
+<a href="/localquaker/category/instructors/2"> C </a>
+<a href="/localquaker/category/instructors/3"> D </a>
+<a href="/localquaker/category/instructors/4"> E </a>
+<a href="/localquaker/category/instructors/5"> F </a>
+<a href="/localquaker/category/instructors/6"> G </a>
+<a href="/localquaker/category/instructors/7"> H </a>
+<a href="/localquaker/category/instructors/8"> I </a>
+<a href="/localquaker/category/instructors/9"> J </a>
+<a href="/localquaker/category/instructors/10"> K </a>
+<a href="/localquaker/category/instructors/11"> L </a>
+<a href="/localquaker/category/instructors/12"> M </a>
+<a href="/localquaker/category/instructors/13"> N </a>
+<a href="/localquaker/category/instructors/14"> O </a>
+<a href="/localquaker/category/instructors/15"> P </a>
+<a href="/localquaker/category/instructors/16"> Q </a>
+<a href="/localquaker/category/instructors/17"> R </a>
+<a href="/localquaker/category/instructors/18"> S </a>
+<a href="/localquaker/category/instructors/19"> T </a>
+<a href="/localquaker/category/instructors/20"> U </a>
+<a href="/localquaker/category/instructors/21"> V </a>
+<a href="/localquaker/category/instructors/22"> W </a>
+<a href="/localquaker/category/instructors/23"> X </a>
+<a href="/localquaker/category/instructors/24"> Y </a>
+<a href="/localquaker/category/instructors/25"> Z </a>
+
+
+
+{% endblock %}
+{% block body_block %}
+
+    {% if results %}
+    <section>
+        
+    {% for a in results %}
+    <li>
+    <a href="/localquaker/instructors/{{a.id}}">
+    {{a.name}}
+    </a>
+    </li>
+	{% endfor %}
+    </p>
+    </section>
+   
+            {% endif %}
+        
+{% endblock %}

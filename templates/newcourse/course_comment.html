@@ -1,0 +1,25 @@
+{% extends 'newcourse/base.html' %}
+{% block title %} Add a comment {% endblock %}
+{% block head %}  {% endblock %}
+{% block detail %} Please fill out the form below {% endblock %}
+
+{% block body_block %}
+    <h1>Add a comment</h1>
+    
+    <form id="prof_comment_form" method="post" action="/localquaker/depts/{{theid}}/comment/" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+
+      {% for field in form.visible_fields %}
+           <div class = "form-group">
+            {{ field.errors }}
+            {{ field.help_text }}
+            </br>{{ field }}
+        </div>
+        {% endfor %}
+
+      <input type="submit" name="submit" value="Comment" />
+    </form>
+{% endblock %}
